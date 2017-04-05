@@ -1,0 +1,141 @@
+// color
+.gray-light2 { color: $gray-light2; }
+
+.orange-dark { color: $orange-dark; }
+
+.theme-bg { background-color: $body-bg; }
+
+.white-bg { background-color: #ffffff; }
+
+.active { color: $activeColor; }
+.active2 { color: $activeColor2; }
+
+.active-btn {
+  background-color: $activeColor !important;
+  color: #ffffff !important;
+  &.is-plain {
+    color: $activeColor !important;
+    border-color: $activeColor !important;
+  }
+}
+
+// line
+.bd-line {
+  height: 1px;
+  margin: 8px 0;
+  @include slenderBorder();
+}
+
+// 多余省略
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ====================
+// 模拟select元素的样式
+//.select {
+//  position: relative;
+//  &::after {
+//    right: 15px;
+//    content: "\F107";
+//    font-family: jzfont;
+//    font-size: inherit;
+//    line-height: 1;
+//    position: absolute;
+//    top: 50%;
+//    display: inline-block;
+//    transform: translateY(-50%);
+//    text-decoration: none;
+//    color: #bbb;
+//    -webkit-font-smoothing: antialiased;
+//  }
+//  select { margin-bottom: 0; }
+//}
+
+// 消息点
+.msg-point-ico, .msg-num-ico {
+  position: absolute;
+  background-color: #f94234;
+  border-radius: 50%;
+  margin: 0;
+}
+.msg-point-ico {
+  width: 8px;
+  height: 8px;
+  top: -3px;
+  right: -3px;
+}
+.msg-num-ico {
+  top: -7px;
+  right: -7px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+// 元素被禁止
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+// 文字型图标
+[class^="ico-word-"], [class*=" ico-word-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  font-size: 12px;
+}
+.ico-word-jian {
+  color: $body-bg;
+  background-color: $orange-dark;
+}
+
+
+
+.main-border { border: 1px solid $gray-lighter; }
+
+// 元素距离
+// margin-t, margin-r, margin-b, margin-l 表示margin上、右、下、左
+$mp-star: 5;
+$mp-end: 40;
+@for $i from $mp-star through $mp-end {
+  .margin-#{$i} { margin: ($i / toNum($baseFontSize)) * 1em; }
+}
+@for $i from $mp-star through $mp-end {
+  .margin-t-#{$i} { margin-top: ($i / toNum($baseFontSize)) * 1em; }
+}
+@for $i from $mp-star through $mp-end {
+  .margin-r-#{$i} { margin-right: ($i / toNum($baseFontSize)) * 1em;; }
+}
+@for $i from $mp-star through $mp-end {
+  .margin-b-#{$i} { margin-bottom: ($i / toNum($baseFontSize)) * 1em;; }
+}
+@for $i from $mp-star through $mp-end {
+  .margin-l-#{$i} { margin-left: ($i / toNum($baseFontSize)) * 1em;; }
+}
+// padding-t, padding-r, padding-b, padding-l 表示padding上、右、下、左
+@for $i from $mp-star through $mp-end {
+  .padding-#{$i} { padding: ($i / toNum($baseFontSize)) * 1em; }
+}
+@for $i from $mp-star through $mp-end {
+  .padding-t-#{$i} { padding-top: ($i / toNum($baseFontSize)) * 1em; }
+}
+@for $i from $mp-star through $mp-end {
+  .padding-r-#{$i} { padding-right: ($i / toNum($baseFontSize)) * 1em;; }
+}
+@for $i from $mp-star through $mp-end {
+  .padding-b-#{$i} { padding-bottom: ($i / toNum($baseFontSize)) * 1em;; }
+}
+@for $i from $mp-star through $mp-end {
+  .padding-l-#{$i} { padding-left: ($i / toNum($baseFontSize)) * 1em;; }
+}

@@ -1,0 +1,98 @@
+@import "../scss/variables";
+@import "../scss/mixins";
+
+.tab-wrap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-around;
+  border-bottom: 1px solid $grayBdLight;
+  .tab-cell-text {
+    display: block;
+    position: relative;
+    &:before, &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+    }
+    &:after {
+      width: 0;
+      height: 0;
+      border-top: 4px solid $gray2;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      margin-top: -2px;
+      margin-left: 5px;
+    }
+  }
+
+  .tab-cell,
+  .tab-popup-cell {
+    display: block;
+  }
+
+  .tab-cell {
+    flex: 0 1 25%;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 3;
+
+    & + .tab-cell .tab-cell-text:before {
+      left: 0;
+      height: 1em;
+      margin-top: -.5em;
+      border-left: 1px solid $grayBdLight;
+    }
+
+    &.on {
+      .tab-cell-text {
+        color: $activeColor;
+        &:after {
+          border-top: none;
+          border-bottom: 4px solid $activeColor;
+        }
+      }
+      .tab-cell-popup-box {
+        display: block;
+      }
+    }
+
+  }
+  .tab-cell-popup-box {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3em;
+    z-index: 2;
+    padding-bottom: 8px;
+    margin-top: 1px;
+    text-align: left;
+    background-color: #FFFFFF;
+  }
+  .tab-popup-cell {
+    padding-left: 20px;
+    padding-right: 20px;
+    @include slenderBorder($grayBdLight);
+    &.on {
+      background-color: $grayBdLight;
+      color: $activeColor;
+      i { position: relative;
+        &:before {
+          content: " ";
+          top: 3px;
+          position: absolute;
+          width: 4px;
+          height: 8px;
+          border: 2px solid $activeColor;
+          border-left: 0;
+          border-top: 0;
+          transform: rotate(45deg) scale(1);
+        }
+      }
+    }
+  }
+
+}

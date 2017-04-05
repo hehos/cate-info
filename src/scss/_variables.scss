@@ -1,0 +1,37 @@
+@import "../../widget/scss/variables";
+
+// Color
+$body-bg:                       #eee;
+
+// orange
+$orange-dark:                   #fd5a37;
+
+
+// theme color var
+$globalBg:                      #f3f3f3;
+$themeBg:                       $body-bg;
+$activeColor:                   $orange-dark;
+$activeColor2:                  #91b81d;
+$linkColor:                     #0ab4e8;
+$btnColor:                      #fd8a17;
+
+// gray
+$gray-dark:                     #333333 !default;
+$gray2:                         #666666;
+$gray-light:                    #999999;
+$grayBorder:                    #dddddd;
+$grayBdLight:                   #eceeef;
+
+// font-size
+$baseFontSize:                  14px;
+
+$font-size-h1:                  2em;
+$font-size-h2:                  1.8em;
+$font-size-h3:                  1.6em;
+$font-size-h4:                  1.4em;
+$font-size-h5:                  1.2em;
+$font-size-h6:                  1em;
+
+
+// font-family    \5b8b\4f53   是宋体
+$smallFont:                     "\5b8b\4f53", serif;

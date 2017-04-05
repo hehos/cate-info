@@ -1,0 +1,43 @@
+@import "variables";
+@import "mixins";
+
+#login-page {
+  .mint-cell-title {
+    width: 4em;
+  }
+
+  height: 100vh;
+  padding-top: 75px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #ffffff;
+  // 框架样式重置
+
+  .page-title {
+    background-color: #ffffff;
+    color: inherit;
+    border-bottom: 1px solid $grayBorder;
+  }
+  .login-box {
+    margin-top: 25px;
+    margin-bottom: 45px;
+  }
+  .login-other-info {
+    margin-top: 8px;
+    color: $gray-light;
+    font-size: 14px;
+  }
+  .register-goto {
+    color: $linkColor;
+  }
+
+  /* 获取验证码 和 密码可见按钮 */
+  .get-check {
+    font-size: 14px;
+    height: 30px;
+  }
+  .show-pwd {
+    margin-top: 8px;
+  }
+
+}

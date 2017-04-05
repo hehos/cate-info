@@ -1,0 +1,250 @@
+@import "variables";
+@import "mixins";
+
+// =====================================
+// ----------- 项目公共样式 -------------
+
+// ========================
+// 浏览器重置样式
+body {
+  background-color: $globalBg;
+}
+
+// ========================
+// 框架重置样式
+.mint-header,
+.mint-navbar {
+  border-bottom: 1px solid $grayBdLight;
+}
+.mint-header {
+  height: 48px;
+  background-color: #ffffff;
+  color: inherit;
+}
+
+.mint-search {
+  height: auto;
+}
+.mint-searchbar {
+  background-color: $globalBg;
+  padding: 10px 15px;
+}
+.mint-searchbar-inner {
+  height: 35px;
+  background-color: #ffffff;
+}
+.mint-searchbar-inner .mintui-search,
+.mint-searchbar-placeholder {
+  font-size: 14px;
+}
+.mint-searchbar-cancel { color: inherit; }
+.mint-search-list {
+  padding-top: 0;
+  top: 55px;
+  bottom: 0;
+  overflow: auto;
+  z-index: 2;
+}
+
+.mint-tab-item-label {
+  font-size: 15px;
+}
+
+.mint-swipe-indicator.is-active {
+  background-color: $orange-dark;
+  opacity: 1;
+}
+.mint-cell i { margin-right: 0; }
+.mint-cell-text {  vertical-align: inherit; }
+
+
+.mint-indexlist-nav {
+  border-left-color: $grayBdLight;
+}
+
+// ========================
+// 自定义公用央视
+.mint-header {
+  [class^="icon-"],
+  [class*=" icon-"],
+  .is-left,
+  .is-right {
+    font-size: 16px;
+    color: $gray2;
+  }
+}
+
+#header-search-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding-left: 38px;
+  background-color: $globalBg;
+}
+
+.top-search-box {
+  overflow: hidden;
+  line-height: 30px;
+  @include background-color-rgba(#fff, .5);
+  border-radius: 3px;
+  color: $gray2;
+  i { margin-right: 8px; }
+  .input-box { overflow: hidden; }
+  input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    &::-webkit-input-placeholder { color: inherit; }
+  }
+}
+
+#top-back-btn {
+  font-size: 16px;
+  color: $gray2;
+}
+
+#top-back-btn {
+  position: fixed;
+  left: 15px;
+  top: 13px;
+  height: 30px;
+  line-height: 30px;
+}
+
+// 底部有编辑按钮时，统一的底部填充
+.bottom-edit-padding {
+  padding-bottom: 45px;
+}
+#bottom-edit-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  background-color: $orange-dark;
+}
+
+// 输入框右边有元素情况
+.has-right-el .mint-cell-value {
+  padding-right: 5em;
+}
+
+.block-wrap {
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  .block-cont {
+    padding: 5px 10px;
+  }
+}
+.title-bar {
+  padding: 0 10px;
+  margin-bottom: 5px;
+  .title { font-size: 1.1em; }
+}
+
+
+// 通用的图文模块
+.general-imgtxt,
+.general-imgtxt2 {
+  @include clearfix();
+  &:last-child { margin-bottom: 0; }
+  .media-title {
+    font-weight: normal;
+    line-height: 1.2;
+    height: 2.4em;
+    margin-bottom: 5px;
+    overflow: hidden;
+    white-space: normal;
+  }
+  .img {
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+  }
+}
+
+.general-imgtxt2 {
+  position: relative;
+  padding: 12px 12px 0px;
+  margin-bottom: 12px;
+  .img {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 12px;
+  }
+  .media-title {
+    line-height: 1.4;
+    height: 2.8em;
+    margin-bottom: 15px;
+  }
+  .bottom-acts {
+    clear: both;
+    padding: 10px 0;
+    text-align: right;
+    border-top: 1px solid $grayBdLight;
+  }
+  .mint-button {
+    height: 30px;
+    border-color: $orange-dark;
+    color: $orange-dark;
+    margin-left: 10px;
+  }
+  .like-btn {
+    &.on i {
+      color: $orange-dark;
+    }
+  }
+}
+
+
+// 模拟已失效章印
+.stamp-invalid {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  font-size: 20px;
+  border-radius: 50%;
+  color: #dcdcdc;
+  transform:rotate(-12deg);
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  &:before {
+    z-index: 9;
+    $juli: 2px;
+    left: $juli;
+    right: $juli;
+    top: $juli;
+    bottom: $juli;
+    border: 1px solid #dcdcdc;
+  }
+  &:after {
+    z-index: 8;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    border: 2px solid #dcdcdc;
+  }
+}
+
+// 右滑删除功能
+.mint-cell-swipe-buttongroup {
+  display: flex;
+}
+.mint-cell-swipe-button {
+  display: flex;
+  align-items: center;
+}

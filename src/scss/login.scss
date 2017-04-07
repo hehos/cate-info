@@ -7,9 +7,7 @@
   }
 
   height: 100vh;
-  padding-top: 75px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-top: 65px;
   background-color: #ffffff;
   // 框架样式重置
 
@@ -21,14 +19,17 @@
   .login-box {
     margin-top: 25px;
     margin-bottom: 45px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .login-other-info {
     margin-top: 8px;
+    margin-bottom: 30px;
     color: $gray-light;
     font-size: 14px;
   }
   .register-goto {
-    color: $linkColor;
+    color: $orange-dark;
   }
 
   /* 获取验证码 和 密码可见按钮 */

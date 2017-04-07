@@ -20,6 +20,15 @@ body {
   height: 48px;
   background-color: #ffffff;
   color: inherit;
+  .mint-header-title {
+    font-size: 15px;
+  }
+  &.is-fixed + * {
+    padding-top: 48px;
+  }
+  .right-link {
+    font-size: 14px;
+  }
 }
 
 .mint-search {
@@ -44,6 +53,17 @@ body {
   bottom: 0;
   overflow: auto;
   z-index: 2;
+}
+.mint-navbar .mint-tab-item.is-selected {
+  color: $activeColor;
+  border-color: $activeColor;
+}
+
+#footer {
+  .mint-tab-item-label {
+    line-height: 45px;
+    margin: -7px 0;
+  }
 }
 
 .mint-tab-item-label {
@@ -117,15 +137,15 @@ body {
 }
 
 // 底部有编辑按钮时，统一的底部填充
-.bottom-edit-padding {
+.bottom-bar-padding {
   padding-bottom: 45px;
 }
-#bottom-edit-btn {
+#bottom-fixed-bar {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
   border-radius: 0;
+  right: 0;
   background-color: $orange-dark;
 }
 
@@ -171,7 +191,7 @@ body {
 .general-imgtxt2 {
   position: relative;
   padding: 12px 12px 0px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   .img {
     width: 80px;
     height: 80px;

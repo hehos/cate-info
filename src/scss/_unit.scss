@@ -10,14 +10,17 @@
 .active { color: $activeColor; }
 .active2 { color: $activeColor2; }
 
-.active-btn {
-  background-color: $activeColor !important;
-  color: #ffffff !important;
-  &.is-plain {
-    color: $activeColor !important;
-    border-color: $activeColor !important;
+body {
+  .active-btn {
+    background-color: $activeColor;
+    color: #ffffff;
+    &.is-plain {
+      color: $activeColor;
+      border-color: $activeColor;
+    }
   }
 }
+
 
 // line
 .bd-line {

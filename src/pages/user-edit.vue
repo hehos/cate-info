@@ -15,7 +15,7 @@
 
     </div>
 
-    <div class="margin-t-10 block-wrap bind-list">
+    <div class="margin-t-8 block-wrap bind-list">
 
       <mt-cell title="QQ">
         <mt-button size="small" type="primary" plain>绑定</mt-button>

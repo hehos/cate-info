@@ -1,5 +1,5 @@
 <template>
-  <div id="index-page" class="bottom-edit-padding">
+  <div id="index-page" class="bottom-bar-padding">
     <!-- 头部搜索等... -->
     <div class="top-search">
       <div class="f-left select-address">
@@ -100,7 +100,7 @@
       </div>
     </div>
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary"
+    <mt-button id="bottom-fixed-bar" size="large" type="primary"
       @click="$router.push('cate')">
       <i class="icon-edit2"></i>发布
     </mt-button>

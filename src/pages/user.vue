@@ -44,7 +44,7 @@
     </div>
 
     <div class="more-server">
-      <mt-cell title="查看更多" is-link></mt-cell>
+      <mt-cell title="查看更多" is-link to="http://192.168.0.188:8889"></mt-cell>
     </div> 
 
   </div>

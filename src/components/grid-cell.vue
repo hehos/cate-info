@@ -1,7 +1,7 @@
 <template>
   <!--<router-link :class="itemIdx && cellClass || 'grid-cell'"-->
   <a class="grid-cell"
-     :class="this.itemIdx ? 'cell-' + this.itemIdx : ''"
+     :class="itemIdx ? 'cell-' + this.itemIdx : ''"
      :href="href">
     <slot>
       <div class="ico-box" :class="iconBg ? 'isBg': ''"
@@ -21,7 +21,6 @@
 <script>
   export default {
     name: 'grid-cell',
-
     props: {
       to: [String, Object],
       item: Object,

@@ -1,5 +1,5 @@
 <template>
-  <div id="user-page" class="bottom-edit-padding">
+  <div id="user-page" class="bottom-bar-padding">
 
     <div class="margin-t-10 block-wrap">
 
@@ -13,7 +13,7 @@
       <i class="icon-certification-o"></i>进入企业认证
     </div>
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary">
+    <mt-button id="bottom-fixed-bar" size="large" type="primary">
       立即授权
     </mt-button>
   </div>

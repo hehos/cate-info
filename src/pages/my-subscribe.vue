@@ -1,23 +1,21 @@
 <template>
-  <div id="user-page" class="bottom-edit-padding">
+  <div id="user-page" class="bottom-bar-padding">
 
-    <div class="margin-t-10 subscribe-list">
-
+    <div class="margin-t-10 swipe-list">
 
       <mt-cell-swipe class="margin-b-10"
-        v-for="(item, idx) in items" :key="idx"
-        :right="rightBtnConfig(item)"
-        :title="item.title"
-        :label="'类别：' + item.cateName"
-        :id="item.id">
+                     v-for="(item, idx) in items" :key="idx"
+                     :right="rightBtnConfig(item)"
+                     :title="item.title"
+                     :label="'类别：' + item.cateName"
+                     :id="item.id">
       </mt-cell-swipe>
-
 
     </div>
 
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary"
-               @click="$router.push('cate')">
+    <mt-button id="bottom-fixed-bar" size="large" type="primary"
+               @click="$router.push('cate-subscibe')">
       <i class="icon-edit2"></i>添加订阅
     </mt-button>
   </div>

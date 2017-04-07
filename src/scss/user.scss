@@ -42,16 +42,53 @@
   .more-server { color: $gray-light; }
 
   .subscribe-list {
+    .list-group-item {
+      margin-bottom: 8px;
+      background-color: #FFFFFF;
+    }
+  }
+  .swipe-list {
     .mint-cell-wrapper {
       padding-top: 10px;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
       background-image: none;
+      background-color: #FFFFFF;
+      margin-bottom: 8px;
     }
     .mint-cell-label {
       margin-top: 10px;
     }
+    .mint-cell:last-child {
+      background-image: none;
+    }
   }
 
+  .collect-list {
+    .time {
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+      font-size: 14px;
+      color: $gray-light2;
+    }
+    .img {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      height: 45px;
+      width: 60px;
+    }
+    .mint-cell-title {
+      min-height: 45px;
+      margin-left: 75px;
+      @include text-truncate();
+    }
+    .mint-cell-label {
+      margin-top: 15px;
+      font-size: 14px;
+      color: $orange-dark;
+    }
+  }
 
   // 个人信息编辑页面
   .avatar-img {
@@ -113,4 +150,10 @@
     font-size: 16px;
   }
 
+
+  .general-imgtxt2 {
+    .state {
+      color: $orange-dark;
+    }
+  }
 }

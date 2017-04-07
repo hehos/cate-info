@@ -1,5 +1,5 @@
 <template>
-  <div id="list-page" class="bottom-edit-padding ">
+  <div id="list-page" class="bottom-bar-padding ">
 
     <div id="header-search-wrap">
       <span id="top-back-btn" @click="$router.go(-1)">
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="margin-b-10 block-wrap filter-wrap">
+    <div class="margin-b-8 block-wrap filter-wrap">
       <tab-box v-model="cellSelected">
         <tab-cell v-model="childsCellSelected[idx]"
             v-for="(item, idx) in filterDatas"
@@ -43,7 +43,6 @@
             {{ item.title }}</router-link></h5>
           <p class="media-explain">
               <span class="f-right time">
-                {{ item.distance }}&nbsp;&nbsp;
                 <i class="icon-clock2-o"></i>{{ item.date }}
               </span>
             {{ item.cateName }}  {{ item.address }}
@@ -54,7 +53,7 @@
 
     </div>
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary"
+    <mt-button id="bottom-fixed-bar" size="large" type="primary"
                @click="$router.push('cate')">
       <i class="icon-edit2"></i>发布
     </mt-button>

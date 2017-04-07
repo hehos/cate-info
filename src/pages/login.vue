@@ -10,7 +10,7 @@
       <mt-tab-container v-model="selected" :swipeable="true">
         <mt-tab-container-item id="1">
 
-          <mt-field class="has-right-el" label="手机号" placeholder="请输入手机号" type="tel">
+          <mt-field label="手机号" placeholder="请输入手机号" type="tel">
             <mt-button class="get-check" type="default">获取验证码</mt-button>
           </mt-field>
 
@@ -30,14 +30,15 @@
       </mt-tab-container>
 
       <div class="login-box">
-        <mt-button size="large" type="primary" @click="toNextPage">登录</mt-button>
+        <mt-button class="active-btn" size="large" type="primary" @click="toNextPage">登录</mt-button>
         <div class="login-other-info">
           <router-link to="/register" class="f-right register-goto">立即注册</router-link>
           <router-link to="/password" class="get-pwd"> 忘记密码？</router-link>
         </div>
+
+        <mt-button class="active-btn" plain size="large" type="primary"><i class="icon-qq"></i>使用QQ帐号登录</mt-button>
       </div>
 
-      <mt-button plain size="large" type="primary"><i class="icon-qq"></i>使用QQ帐号登录</mt-button>
 
     </div>
 

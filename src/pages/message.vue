@@ -1,7 +1,7 @@
 <template>
   <div id="user-page" class="">
 
-    <div class="margin-t-10 subscribe-list">
+    <div class="margin-t-10 swipe-list">
 
       <mt-cell-swipe class="margin-b-10"
         v-for="(item, idx) in items" :key="idx"

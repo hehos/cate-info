@@ -1,5 +1,5 @@
 <template>
-  <div id="user-page" class="bottom-edit-padding ">
+  <div id="user-page" class="bottom-bar-padding ">
 
     <div class="margin-t-10">
 
@@ -13,7 +13,6 @@
             {{ item.title }}</a></h5>
           <p class="media-explain">
               <span class="f-right time">
-                {{ item.distance }}&nbsp;&nbsp;
                 <i class="icon-clock2-o"></i>{{ item.date }}
               </span>
             {{ item.cateName }}  {{ item.address }}
@@ -23,7 +22,7 @@
 
     </div>
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary"
+    <mt-button id="bottom-fixed-bar" size="large" type="primary"
                @click="$router.push('cate')">
       <i class="icon-edit2"></i>发布新信息
     </mt-button>

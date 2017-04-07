@@ -13,6 +13,7 @@ import password from '@/pages/password';
 import address from '@/pages/address';
 import search from '@/pages/search';
 import cate from '@/pages/cate';
+import cateSubscibe from '@/pages/cate-subscibe';
 import publishForm from '@/pages/publish-form';
 import user from '@/pages/user';
 import userEdit from '@/pages/user-edit';
@@ -55,7 +56,7 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       components: {
-        header: header,
+        // header: header,
         default: detail
       }
     },
@@ -102,8 +103,16 @@ export default new Router({
       path: '/cate',
       name: 'cate',
       components: {
-        header: header,
+        // header: header,
         default: cate
+      }
+    },
+    {
+      path: '/cate-subscibe',
+      name: 'cateSubscibe',
+      components: {
+        // header: header,
+        default: cateSubscibe
       }
     },
     {

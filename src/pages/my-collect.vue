@@ -1,41 +1,19 @@
 <template>
-  <div id="user-page" class="bottom-edit-padding ">
+  <div id="user-page" class="bottom-bar-padding ">
 
-    <div class="margin-t-10">
-
-      <div class="white-bg media-small-imgtxt general-imgtxt2"
-           v-for="(item, idx) in items" :key="idx">
-        <a href="" class="img">
-          <img :src="item.img" alt=""/>
-        </a>
-        <div class="media-txt">
-          <h5 class="media-title"><a href="">
-            {{ item.title }}</a></h5>
-          <p class="media-explain">
-              <span class="f-right time">
-                {{ item.distance }}&nbsp;&nbsp;
-                <i class="icon-clock2-o"></i>{{ item.date }}
-              </span>
-            {{ item.cateName }}  {{ item.address }}
-          </p>
-
-          <span class="stamp-invalid">已失效</span>
-
-        </div>
-
-        <div class="bottom-acts">
-          <mt-button plain size="small">
-            <i class="icon-edit2"></i>继续发布
-          </mt-button>
-          <mt-button plain size="small">
-            <i class="icon-trash-o"></i>删除
-          </mt-button>
-        </div>
-      </div>
-
+    <div class="swipe-list collect-list">
+      <mt-cell-swipe class="margin-b-10"
+               v-for="(item, idx) in items" :key="idx"
+               :right="rightBtnConfig(item)"
+               :title="item.title"
+               :label="item.state"
+               :id="item.id">
+        <span class="time">{{ item.date }}</span>
+        <span slot="icon" class="img"><img :src="item.img" alt=""></span>
+      </mt-cell-swipe>
     </div>
 
-    <mt-button id="bottom-edit-btn" size="large" type="primary"
+    <mt-button id="bottom-fixed-bar" size="large" type="primary"
                @click="$router.push('cate')">
       <i class="icon-edit2"></i>发布新信息
     </mt-button>
@@ -50,35 +28,39 @@
       return {
         items: [
           {
+            id: 1,
             title: '1这是标题这是标题11这是标题这是标题1',
             img: '/static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
-            distance: '300m',
+            state: '已失效',
             date: '2017-3-15'
           },
           {
+            id: 2,
             title: '2这是标题这是标题22这是标题这是标题2',
             img: '/static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
-            distance: '300m',
+            state: '',
             date: '2017-3-15'
           },
           {
+            id: 3,
             title: '3这是标题这是标题22这是标题这是标题2',
             img: '/static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
-            distance: '300m',
+            state: '已失效',
             date: '2017-3-15'
           },
           {
+            id: 4,
             title: '4这是标题这是标题22这是标题这是标题2',
             img: '/static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
-            distance: '300m',
+            state: '',
             date: '2017-3-15'
           }
         ]
@@ -93,6 +75,33 @@
 //        headerRightText: '分享',
         headerTitle: '我的收藏'
       })
+
+      // 处理已读，删除逻辑
+      let markReadConf =  {
+        content: '标为已读',
+        style: { background: 'orange', color: '#fff' }
+      };
+      markReadConf.handler = () => {
+        markReadConf.content = markReadConf.content === '标为已读' ? '标为未读' : '标为已读';
+        console.log(markReadConf.content);
+      }
+      this.rightBtnConfig = function (item) {
+        var id = item.id;
+        return [
+          markReadConf,
+          {
+            content: '删除',
+            style: { background: 'red', color: '#fff' },
+            handler: () => {
+              this.$messagebox.confirm('确定删除?').then(action => {
+                this.items = this.items.filter(function (item) {
+                  return item.id !== id;
+                })
+              });
+            }
+          }
+        ];
+      }
 
       // 请求数据
 //      this.$http.get('/static/data/log.json',

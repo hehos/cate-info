@@ -4,9 +4,6 @@
       <div slot="left" @click="$router.go(-1)">
         <i class="icon-angle-left3"></i>
       </div>
-      <div slot="right">
-        <router-link class="right-link" to="/my-publish">我的发布</router-link>
-      </div>
     </mt-header>
 
     <grid-box :cols="3">
@@ -15,6 +12,9 @@
          :item="item"
          :itemIdx="(idx+1)"
          :iconBg="iconBgs[idx]">
+        <div slot="special-tag" class="special-tag">
+          已订阅
+        </div>
       </grid-cell>
     </grid-box>
   </div>
@@ -74,16 +74,40 @@
 <style lang="scss">
   #cate-page {
     .grid-box {
-      padding-top: 70px;
-    }
-    .grid-cell { margin-bottom: 25px; }
-    .view-title { margin-top: 10px; }
-    .grid-box .ico-box.isBg {
-      width: 1.6em;
-      height: 1.6em;
-      line-height: 1.6;
-      border-radius: .5em;
-      font-size: 42px;
+      .ico-box { position: relative; }
+      .special-tag {
+        position: absolute;
+        top: 8px;
+        right: -18px;
+        width: 3em;
+        line-height: 1.3;
+        margin-left: 1.3em;
+        margin-right: 1.3em;
+        background-color: #f3f3f3;
+        font-size: 12px;
+        color: #ff0000;
+        transform: rotate(45deg) scale(1);
+        &:before, &:after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          position: absolute;
+         top: 0;
+        }
+        &:before {
+           left: -1em;
+           border-bottom: 1.3em solid #f3f3f3;
+           border-right: 0 solid transparent;
+           border-left: 1em solid transparent;
+         }
+        &:after {
+           right: -1em;
+           border-bottom: 1.3em solid #f3f3f3;
+           border-right: 1em solid transparent;
+           border-left: 0 solid transparent;
+         }
+      }
     }
   }
 </style>

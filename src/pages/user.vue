@@ -19,10 +19,11 @@
       <grid-box :cols="4">
         <grid-cell v-for="(item, idx) in gridCells"
           :key="idx"
-          :item="item"
+          :icon="item.icon"
+          :title="item.title"
           :itemIdx="idx+1"
           :iconColor="iconColor[idx]"
-          :to="{ path: item.route }">
+          :to="{ name: item.route }">
         </grid-cell>
       </grid-box>
     </div>
@@ -35,7 +36,8 @@
         <grid-box :cols="4">
           <grid-cell v-for="(item, idx) in serverGridCells"
             :key="idx"
-            :item="item"
+            :icon="item.icon"
+            :title="item.title"
             :itemIdx="idx+1"
             :to="{ name: item.route }">
           </grid-cell>
@@ -58,15 +60,10 @@
     data () {
       return {
         gridCells: [
-//          {title: '我的发布', icon: 'icon-home', route: 'myPublish'},
-//          {title: '我的收藏', icon: 'icon-home', route: 'mycollect'},
-//          {title: '历史纪录', icon: 'icon-home', route: 'myHistory'},
-//          {title: '我的订阅', icon: 'icon-home', route: 'mySubscribe'}
-
-          {title: '我的发布', icon: 'icon-home', route: 'my-publish'},
-          {title: '我的收藏', icon: 'icon-home', route: 'my-collect'},
-          {title: '历史纪录', icon: 'icon-home', route: 'my-history'},
-          {title: '我的订阅', icon: 'icon-home', route: 'my-subscribe'}
+          {title: '我的发布', icon: 'icon-home', route: 'myPublish'},
+          {title: '我的收藏', icon: 'icon-home', route: 'mycollect'},
+          {title: '历史纪录', icon: 'icon-home', route: 'myHistory'},
+          {title: '我的订阅', icon: 'icon-home', route: 'mySubscribe'}
         ],
         serverGridCells: [
           {title: '旺铺', icon: 'icon-shop-o', route: 'certification'},

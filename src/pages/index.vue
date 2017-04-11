@@ -22,7 +22,8 @@
           <grid-box :cols="4">
             <grid-cell :key="idx"
               v-for="(item, idx) in gridCells.slice((i)*num, (i+1)*num)"
-              :item="item"
+              :title="item.title"
+              :icon="item.icon"
               :itemIdx="idx+1"
               :iconBg="iconBgs[idx]"
               :to="{ name: 'list' }">
@@ -51,7 +52,6 @@
             {{ item.title }}
           </router-link>
         </swiper-slide>
-
 
       </swiper>
     </div>
@@ -149,36 +149,36 @@
         ],
 
         hotItems: [
-          { title: '1这是标题这是标题', img: '/static/image/img1.jpg' },
-          { title: '2这是标题这是标题', img: '/static/image/img1.jpg' },
-          { title: '3这是标题这是标题', img: '/static/image/img1.jpg' }
+          { title: '1这是标题这是标题', img: 'static/image/img1.jpg' },
+          { title: '2这是标题这是标题', img: 'static/image/img1.jpg' },
+          { title: '3这是标题这是标题', img: 'static/image/img1.jpg' }
         ],
 
         likeItems: [
           {
             title: '1这是标题这是标题11这是标题这是标题1',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             date: '2017-3-15'
           },
           {
             title: '2这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             date: '2017-3-15'
           },
           {
             title: '3这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             date: '2017-3-15'
           },
           {
             title: '4这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             date: '2017-3-15'

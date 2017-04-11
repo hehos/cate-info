@@ -1,11 +1,14 @@
 <template>
 
-  <div class="tab-cell"
-    :class="{ 'on': $parent.value === item.id && isOn }">
+  <div class="tab-cell" ref="cell"
+    :class="{ 'on': $parent.value === id && isOn }">
+
+    <div class="popup-mask" @click="selected"
+      :style="{ top: maskTop + 'px' }"></div>
 
     <a class="tab-cell-text"
           @click.stop="selected">
-      {{ item.title }}
+      {{ title }}
     </a>
 
     <div v-if="hasChild" class="tab-cell-popup-box">
@@ -21,29 +24,36 @@
     name: 'tab-cell',
 
     props: {
-      item: Object,
+      id: [Number, String],
+      title: String,
+
       hasChild: Array,
       value: {}
     },
 
     data () {
       return {
-        isOn: false
+        isOn: false,
+
+        maskTop: 0
       }
     },
 
     methods: {
       selected () {
         this.isOn = !this.isOn;
-        this.$parent.$emit('input', this.item.id)
+        this.$parent.$emit('input', this.id)
 
-        this.$nextTick(() => {
-          console.log(this.$parent.value);
-          console.log(this.isOn);
-        });
+//        this.$nextTick(() => {
+//          console.log(this.$parent.value);
+//          console.log(this.isOn);
+//        });
       }
     },
 
+    mounted() {
+      this.maskTop = this.$refs.cell.getBoundingClientRect().top;
+    },
     components: {
 
     }

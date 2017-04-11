@@ -31,7 +31,7 @@
           {
             id: 1,
             title: '1这是标题这是标题11这是标题这是标题1',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -40,7 +40,7 @@
           {
             id: 2,
             title: '2这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -49,7 +49,7 @@
           {
             id: 3,
             title: '3这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -58,7 +58,7 @@
           {
             id: 4,
             title: '4这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',

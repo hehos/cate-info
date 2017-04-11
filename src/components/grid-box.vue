@@ -38,7 +38,7 @@
         border-radius: .3em;
      }
     }
-    .view-title {
+    .cell-title {
       margin-top: 5px;
     }
   }

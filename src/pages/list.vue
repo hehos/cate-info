@@ -19,12 +19,14 @@
         <tab-cell v-model="childsCellSelected[idx]"
             v-for="(item, idx) in filterDatas"
             :key="idx"
-            :item="item"
+            :id="item.id"
+            :title="item.title"
             :hasChild="item.childs">
           <tab-popup-cell
               v-for="cItem in item.childs"
               :key="cItem.id"
-              :item="cItem"
+              :id="cItem.id"
+              :title="cItem.title"
               :rightIcon="true">
           </tab-popup-cell>
         </tab-cell>

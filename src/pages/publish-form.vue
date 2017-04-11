@@ -119,7 +119,7 @@
   #publish-form-page {
     padding-bottom: 60px;
     .topic-tips {
-      padding: 0 10px;
+      padding: 10px 10px;
       color: darken($grayBorder, 3%);
       .close-btn {
         font-size: 20px;

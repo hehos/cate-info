@@ -1,10 +1,10 @@
 <template>
 
   <a class="tab-popup-cell"
-       :class="{ 'on': $parent.value === item.id }"
+       :class="{ 'on': $parent.value === id }"
        @click.stop="selected">
     <i v-if="leftIcon"></i>
-    {{ item.title }}
+    {{ title }}
     <span class="f-right"><i v-if="rightIcon"></i></span>
   </a>
 
@@ -15,7 +15,9 @@
     name: 'tab-popup-cell',
 
     props: {
-      item: Object,
+      id: [Number, String],
+      title: String,
+
       leftIcon: Boolean,
       rightIcon: Boolean
     },
@@ -28,8 +30,8 @@
 
     methods: {
       selected () {
-        this.$parent.$emit('input', this.item.id);
-        this.$nextTick(() => console.log(this.$parent.value));
+        this.$parent.$emit('input', this.id);
+//        this.$nextTick(() => console.log(this.$parent.value));
       }
     },
 

@@ -109,11 +109,11 @@
       return {
         popupVisible: false,
         swiperDatas: [
-          { img: '/static/image/banner1.jpg' },
-          { img: '/static/image/banner1.jpg' },
-          { img: '/static/image/banner1.jpg' },
-          { img: '/static/image/banner1.jpg' },
-          { img: '/static/image/banner1.jpg' }
+          { img: 'static/image/banner1.jpg' },
+          { img: 'static/image/banner1.jpg' },
+          { img: 'static/image/banner1.jpg' },
+          { img: 'static/image/banner1.jpg' },
+          { img: 'static/image/banner1.jpg' }
         ],
         swiperOption: {
           pagination: '.swiper-pagination',

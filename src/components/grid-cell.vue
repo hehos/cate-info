@@ -1,18 +1,21 @@
 <template>
-  <!--<router-link :class="itemIdx && cellClass || 'grid-cell'"-->
   <a class="grid-cell"
-     :class="itemIdx ? 'cell-' + this.itemIdx : ''"
+     :class="itemIdx ? 'cell-' + itemIdx : ''"
      :href="href">
     <slot>
       <div class="ico-box" :class="iconBg ? 'isBg': ''"
         :style="iconStyle">
-        <i v-if="item.icon" :class="item.icon ||'icon-shop-o'"></i>
-        <img v-else-if="item.img" :src="item.img" :alt="item.title">
-        <i v-else class="icon-shop-o"></i>
+        <slot name="icon">
+          <i v-if="icon" :class="icon"></i>
+          <img v-else-if="img" :src="img" :alt="title">
+          <i v-else class="icon-shop-o"></i>
+        </slot>
 
         <slot name="special-tag"></slot>
       </div>
-      <div class="view-title" v-text="item.title"></div>
+      <slot name="title">
+        <div class="cell-title" v-text="title"></div>
+      </slot>
     </slot>
 
   </a>
@@ -21,10 +24,14 @@
 <script>
   export default {
     name: 'grid-cell',
+
     props: {
       to: [String, Object],
-      item: Object,
-      cellClass: String,
+      // item data
+      icon: String,
+      img: String,
+      title: String,
+
       itemIdx: Number,
       iconBg: String,
       iconColor: String

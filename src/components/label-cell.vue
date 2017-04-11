@@ -20,8 +20,7 @@
       to: [String, Object],
       title: String,
       leftIcon: String,
-      rightIcon: String,
-      cols: Number
+      rightIcon: String
     },
     data () {
       return {

@@ -11,10 +11,12 @@
 
     <grid-box :cols="3">
       <grid-cell v-for="(item, idx) in gridCells"
-         :key="idx"
-         :item="item"
-         :itemIdx="(idx+1)"
-         :iconBg="iconBgs[idx]">
+          :key="idx"
+          :icon="item.icon"
+          :title="item.title"
+          :itemIdx="(idx+1)"
+          :iconBg="iconBgs[idx]"
+          :to="{name: 'publishForm'}">
       </grid-cell>
     </grid-box>
   </div>

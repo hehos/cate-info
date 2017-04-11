@@ -3,11 +3,13 @@
 
 .tab-wrap {
   position: relative;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   align-content: space-around;
   border-bottom: 1px solid $grayBdLight;
+
   .tab-cell-text {
     display: block;
     position: relative;
@@ -33,6 +35,17 @@
     display: block;
   }
 
+  .popup-mask {
+    display: none;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @include background-color-rgba(#000, .6);
+  }
+
   .tab-cell {
     flex: 0 1 25%;
     background-color: #ffffff;
@@ -54,9 +67,8 @@
           border-bottom: 4px solid $activeColor;
         }
       }
-      .tab-cell-popup-box {
-        display: block;
-      }
+      .tab-cell-popup-box { display: block; }
+      .popup-mask { display: block; }
     }
 
   }
@@ -68,7 +80,6 @@
     top: 3em;
     z-index: 2;
     padding-bottom: 8px;
-    margin-top: 1px;
     text-align: left;
     background-color: #FFFFFF;
   }
@@ -94,5 +105,4 @@
       }
     }
   }
-
 }

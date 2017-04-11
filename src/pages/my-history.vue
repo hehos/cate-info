@@ -38,7 +38,7 @@
         items: [
           {
             title: '1这是标题这是标题11这是标题这是标题1',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -46,7 +46,7 @@
           },
           {
             title: '2这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -54,7 +54,7 @@
           },
           {
             title: '3这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -62,7 +62,7 @@
           },
           {
             title: '4这是标题这是标题22这是标题这是标题2',
-            img: '/static/image/img1.jpg',
+            img: 'static/image/img1.jpg',
             cateName: '门窗',
             address: '成都',
             distance: '300m',
@@ -82,7 +82,7 @@
       })
 
       // 请求数据
-//      this.$http.get('/static/data/log.json',
+//      this.$http.get('static/data/log.json',
 //        {isLog: true}).then(data => {
 //        const datas = data.body;
 //
